@@ -1,1 +1,1 @@
-# gradle-clover-multiproject
+https://github.com/bmuschko/gradle-clover-plugin/issues/115
