@@ -1,0 +1,52 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.bmuschko:gradle-clover-plugin:2.2.1'
+    }
+}
+
+
+
+allprojects {
+    apply plugin: 'idea'
+    apply plugin: 'com.bmuschko.clover'
+
+    version = '1.0.0'
+
+    repositories{
+        mavenLocal()
+        mavenCentral()
+        jcenter()
+    }
+
+
+    dependencies{
+        clover 'org.openclover:clover:4.2.0'
+    }
+    clover{
+        report{
+            html=true
+        }
+    }
+
+
+}
+
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'groovy'
+
+    dependencies {
+        testCompile("org.spockframework:spock-core:1.1-groovy-2.4")
+    }
+
+}
+
+
+
+
