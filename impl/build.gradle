@@ -1,3 +1,19 @@
 dependencies{
     compile project(':core')
 }
+
+clover{
+    additionalSourceSet {
+        srcDirs = project(':core').sourceSets.main.java.srcDirs
+        classesDir = project(':core').sourceSets.main.java.outputDir
+    }
+}
+
+sourceSets {
+    // Note that just declaring this sourceset creates two configurations.
+    test {
+        java {
+            srcDirs += project(':core').sourceSets.main.java.srcDirs
+        }
+    }
+}
