@@ -5,7 +5,9 @@ dependencies{
 clover{
     additionalSourceSet {
         srcDirs = project(':core').sourceSets.main.java.srcDirs
-        classesDir = project(':core').sourceSets.main.java.outputDir
+        def coreInstr = file("${buildDir}/core-instr")
+        coreInstr.mkdirs()
+        classesDir = coreInstr
     }
 }
 
